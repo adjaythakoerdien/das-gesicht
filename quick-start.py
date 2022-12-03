@@ -10,14 +10,16 @@ from io import BytesIO
 
 from PIL import Image, ImageDraw
 from azure.cognitiveservices.vision.face import FaceClient
+from dotenv import load_dotenv
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.face.models import TrainingStatusType, Person, QualityForRecognition
 
+load_dotenv()
 # This key will serve all examples in this document.
-KEY = "PASTE_YOUR_FACE_SUBSCRIPTION_KEY_HERE"
+KEY = os.environ["KEY1"]
 
 # This endpoint will be used in all examples in this quickstart.
-ENDPOINT = "PASTE_YOUR_FACE_ENDPOINT_HERE"
+ENDPOINT = os.environ["END_POINT"]
 
 # Base url for the Verify and Facelist/Large Facelist operations
 IMAGE_BASE_URL = 'https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/Face/images/'
